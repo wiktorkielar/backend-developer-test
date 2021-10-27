@@ -1,4 +1,4 @@
-package com.wiktorkielar.backenddevelopertest.service;
+package com.wiktorkielar.backenddevelopertest.converter;
 
 import com.wiktorkielar.backenddevelopertest.model.Country;
 import com.wiktorkielar.backenddevelopertest.model.Vertex;

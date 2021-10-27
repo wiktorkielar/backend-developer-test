@@ -1,12 +1,12 @@
 package com.wiktorkielar.backenddevelopertest.model;
 
-import lombok.Builder;
-import lombok.Getter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
 import java.util.List;
 
-@Builder
-@Getter
-public class Route {
+@Data
+@AllArgsConstructor
+public class Path {
     private List<String> route;
 }

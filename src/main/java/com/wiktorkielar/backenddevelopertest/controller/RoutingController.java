@@ -1,6 +1,6 @@
 package com.wiktorkielar.backenddevelopertest.controller;
 
-import com.wiktorkielar.backenddevelopertest.model.Route;
+import com.wiktorkielar.backenddevelopertest.model.Path;
 import com.wiktorkielar.backenddevelopertest.service.RoutingService;
 import net.minidev.json.parser.ParseException;
 import org.springframework.http.HttpStatus;
@@ -23,7 +23,7 @@ public class RoutingController {
     }
 
     @GetMapping("/{sourceCountry}/{destinationCountry}")
-    public ResponseEntity<Route> getRoute(@PathVariable String sourceCountry, @PathVariable String destinationCountry) throws IOException, ParseException {
+    public ResponseEntity<Path> getRoute(@PathVariable String sourceCountry, @PathVariable String destinationCountry) throws IOException, ParseException {
         if(routingService.getRoute(sourceCountry, destinationCountry).getRoute().size() > 1) {
             return new ResponseEntity<>(routingService.getRoute(sourceCountry, destinationCountry), HttpStatus.OK);
         }

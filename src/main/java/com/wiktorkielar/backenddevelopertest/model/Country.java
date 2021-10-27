@@ -1,13 +1,13 @@
 package com.wiktorkielar.backenddevelopertest.model;
 
 import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
 
 import java.util.List;
 
 @Builder
-@Getter
+@Data
 public class Country {
-    private String name;
+    private String code;
     private List<String> borders;
 }

@@ -1,10 +1,10 @@
 package com.wiktorkielar.backenddevelopertest.service;
 
-import com.wiktorkielar.backenddevelopertest.model.Route;
+import com.wiktorkielar.backenddevelopertest.model.Path;
 import net.minidev.json.parser.ParseException;
 
 import java.io.IOException;
 
 public interface RoutingService {
-    Route getRoute(String sourceCountry, String destinationCountry) throws IOException, ParseException;
+    Path getRoute(String sourceCountry, String destinationCountry) throws IOException, ParseException;
 }

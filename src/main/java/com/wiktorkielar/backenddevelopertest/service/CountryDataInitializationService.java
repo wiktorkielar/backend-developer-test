@@ -6,6 +6,6 @@ import net.minidev.json.parser.ParseException;
 import java.io.IOException;
 import java.util.List;
 
-public interface DataInitializationService {
+public interface CountryDataInitializationService {
     List<Country> initializeData() throws IOException, ParseException;
 }

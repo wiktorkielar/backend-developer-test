@@ -1,7 +1,7 @@
-package com.wiktorkielar.backenddevelopertest.service.impl;
+package com.wiktorkielar.backenddevelopertest.converter.impl;
 
+import com.wiktorkielar.backenddevelopertest.converter.JsonToCountryConverter;
 import com.wiktorkielar.backenddevelopertest.model.Country;
-import com.wiktorkielar.backenddevelopertest.service.JsonConverter;
 import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
 import net.minidev.json.parser.JSONParser;
@@ -12,17 +12,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class JsonConverterImpl implements JsonConverter<Country> {
+public class JsonToCountryConverterImpl implements JsonToCountryConverter {
     @Override
-    public List<Country> covertJSON(String httpEntity) throws ParseException {
+    public List<Country> convert(String httpEntity) throws ParseException {
         List<Country> countryList = new ArrayList<>();
         JSONArray jsonArray = (JSONArray) new JSONParser(JSONParser.MODE_PERMISSIVE).parse(httpEntity);
         jsonArray.forEach(countryJSONObject -> {
-            String name = (((JSONObject) countryJSONObject).get("cca3").toString());
+            String code = (((JSONObject) countryJSONObject).get("cca3").toString());
             List<String> borders = new ArrayList<>();
-            ((JSONArray) ((JSONObject) countryJSONObject).get("borders")).forEach(borderJSONObject -> borders.add(borderJSONObject.toString()));
+            ((JSONArray) ((JSONObject) countryJSONObject).get("borders")).forEach(borderJSONObject ->
+                    borders.add(borderJSONObject.toString()));
             Country country = Country.builder()
-                    .name(name)
+                    .code(code)
                     .borders(borders)
                     .build();
             countryList.add(country);
