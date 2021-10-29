@@ -6,5 +6,5 @@ import net.minidev.json.parser.ParseException;
 import java.io.IOException;
 
 public interface RoutingService {
-    Path getRoute(String sourceCountry, String destinationCountry) throws IOException, ParseException;
+    Path getPath(String sourceCountry, String destinationCountry) throws IOException, ParseException;
 }

@@ -24,8 +24,8 @@ public class RoutingController {
 
     @GetMapping("/{sourceCountry}/{destinationCountry}")
     public ResponseEntity<Path> getRoute(@PathVariable String sourceCountry, @PathVariable String destinationCountry) throws IOException, ParseException {
-        if(routingService.getRoute(sourceCountry, destinationCountry).getRoute().size() > 1) {
-            return new ResponseEntity<>(routingService.getRoute(sourceCountry, destinationCountry), HttpStatus.OK);
+        if(routingService.getPath(sourceCountry, destinationCountry).getRoute().size() > 1) {
+            return new ResponseEntity<>(routingService.getPath(sourceCountry, destinationCountry), HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }

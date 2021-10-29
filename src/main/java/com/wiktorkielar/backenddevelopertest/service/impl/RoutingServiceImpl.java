@@ -38,7 +38,7 @@ public class RoutingServiceImpl implements RoutingService {
     }
 
     @Override
-    public Path getRoute(String sourceCountry, String destinationCountry) throws IOException, ParseException {
+    public Path getPath(String sourceCountry, String destinationCountry) throws IOException, ParseException {
         if (!countryValidator.isValid(sourceCountry) || !countryValidator.isValid(destinationCountry)) {
             throw new InvalidCountryCodeException("One of provided country codes is invalid");
         }
